@@ -1,22 +1,27 @@
 public class Main {
     public static void main(String[] args) {
-        //il main rappresenta il thread principale
-        Concorrenza t1 = new Concorrenza("t1");
-        Concorrenza t2 = new Concorrenza("t2");
-        Concorrenza t3 = new Concorrenza("t3");
-        //creo tre oggetti di tipo Concorrenza ma i thread
-        //non sono ancora in esecuzione
+        int[] a = {1,2,3,4,5,6,7,8,9};
+        int[] b = {9,8,7,6,5,4,3,2,1};
 
-        System.out.println("inizio del processo principale ");
+        Vettore v = new Vettore(a,b);
+        Concorrenza[] threads = new Concorrenza[a.length];
+        for (int i = 0; i < a.length; i++) {
+            Concorrenza t = new Concorrenza("" + i, v, i);
+            t.start();
+            threads[i] = t;
+        }
 
-        //adesso mando in esecuzione i 3 thread
+        for (int i = 0; i < threads.length; i++) {
+            try {
+                threads[i].join();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
-        t1.start();
-        t2.start();
-        t3.start();     //non chiamare run
-        System.out.println("fine del processo principale");
-        //non conosciamo a priori l'ordine con cui i thread
-        //terminano e anche il processo il processo principale
+        for (int i = 0; i < v.getC().length; i++) {
+            System.out.println(v.getC()[i]);
+        }
 
     }
 }
