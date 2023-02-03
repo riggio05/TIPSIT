@@ -7,7 +7,7 @@ package magazzinogui;
 
 /**
  *
- * @author matteo.valerii
+ * @author simone.riggio
  */
 public class MagazzinoGui {
 

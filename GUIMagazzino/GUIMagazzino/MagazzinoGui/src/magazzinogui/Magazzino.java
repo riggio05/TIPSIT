@@ -7,7 +7,7 @@ package magazzinogui;
 import java.util.ArrayList;
 /**
  *
- * @author matteo.valerii
+ * @author simone.riggio
  */
 public class Magazzino {
     public ArrayList <Prodotto> v=new ArrayList<>();
