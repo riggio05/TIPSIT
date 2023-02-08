@@ -15,4 +15,5 @@ public class Vettore {
     public int[] getC() {
         return c;
     }
+
 }

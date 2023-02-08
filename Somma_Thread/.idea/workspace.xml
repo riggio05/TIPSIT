@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b5ed8ca-f65e-41a0-b9b6-1b684728480e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Vettore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Thread/Concorrenza.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thread/Concorrenza.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Thread/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Thread/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Concorrenza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Concorrenza.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Thread2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Thread2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vettore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vettore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +38,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/simone.riggio/Desktop/GitHub/PersonalRepository/Grafi",
+    "last_opened_file_path": "C:/Users/simone.riggio/Desktop/GitHub/TIPSIT/Somma_Thread",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +57,7 @@
       <workItem from="1674026106822" duration="2584000" />
       <workItem from="1675236857987" duration="3057000" />
       <workItem from="1675241232533" duration="843000" />
+      <workItem from="1675840044239" duration="2710000" />
     </task>
     <servers />
   </component>
