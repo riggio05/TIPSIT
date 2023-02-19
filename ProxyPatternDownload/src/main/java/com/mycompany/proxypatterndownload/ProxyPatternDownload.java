@@ -25,9 +25,10 @@ public class ProxyPatternDownload {
     
     public static void main(String[] args) {
         ProxyVideoDownloader proxyVideoDownloader = new ProxyVideoDownloader();
+        ProxyFrame proxyFrame = new ProxyFrame(proxyVideoDownloader);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProxyFrame(proxyVideoDownloader).setVisible(true);
+               proxyFrame.setVisible(true);
             }
         });
     }

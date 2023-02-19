@@ -4,19 +4,18 @@
  */
 package com.mycompany.proxypatterndownload;
 
+import javax.swing.JTextArea;
+
 /**
  *
  * @author sirim
  */
 public class ProxyFrame extends javax.swing.JFrame {
-
-    /**
-     * Creates new form ProxyFrame
-     */
     ProxyVideoDownloader proxyVideoDownloader;
     public ProxyFrame(ProxyVideoDownloader proxyVideoDownloader) {
         this.proxyVideoDownloader = proxyVideoDownloader;
         initComponents();
+        this.proxyVideoDownloader.setVideoDownloader(output);
     }
 
     /**
@@ -33,7 +32,8 @@ public class ProxyFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         testo = new javax.swing.JLabel();
         input = new javax.swing.JTextField();
-        output = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        output = new javax.swing.JTextArea();
 
         jLabel1.setText("jLabel1");
 
@@ -46,9 +46,8 @@ public class ProxyFrame extends javax.swing.JFrame {
             }
         });
 
-        testo.setText("nome del video");
+        testo.setText("Nome del video");
 
-        input.setText(" ");
         input.setMinimumSize(new java.awt.Dimension(500, 22));
         input.setPreferredSize(new java.awt.Dimension(70, 22));
         input.addActionListener(new java.awt.event.ActionListener() {
@@ -57,8 +56,12 @@ public class ProxyFrame extends javax.swing.JFrame {
             }
         });
 
-        output.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        output.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        output.setColumns(20);
+        output.setLineWrap(true);
+        output.setRows(5);
+        output.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        output.setEnabled(false);
+        jScrollPane1.setViewportView(output);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,31 +74,34 @@ public class ProxyFrame extends javax.swing.JFrame {
                         .addGap(88, 88, 88)
                         .addComponent(jLabel2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bottone)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(testo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(54, 54, 54)
-                        .addComponent(output, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(input, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bottone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(testo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(88, 88, 88)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(testo))
+                        .addGap(14, 14, 14)
+                        .addComponent(testo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(bottone))
-                    .addComponent(output, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addComponent(input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bottone)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,17 +114,18 @@ public class ProxyFrame extends javax.swing.JFrame {
     private void bottoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottoneActionPerformed
         String nomeVideo = input.getText();
         proxyVideoDownloader.getVideo(nomeVideo);
-        output.setText(output.getText() + "\n" + nomeVideo);
-        
     }//GEN-LAST:event_bottoneActionPerformed
-
+public JTextArea getOutput() {
+    return output;
+}
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bottone;
     private javax.swing.JTextField input;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel output;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea output;
     private javax.swing.JLabel testo;
     // End of variables declaration//GEN-END:variables
 }

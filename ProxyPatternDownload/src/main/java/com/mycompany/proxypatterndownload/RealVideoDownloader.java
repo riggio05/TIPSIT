@@ -4,15 +4,21 @@
  */
 package com.mycompany.proxypatterndownload;
 
+import javax.swing.JTextArea;
+
 /**
  *
  * @author sirim
  */
 public class RealVideoDownloader implements VideoDownloader {
+    private JTextArea textArea;
+    public RealVideoDownloader(JTextArea textArea) {
+        this.textArea = textArea;
+    }
     @Override
     public Video getVideo(String videoName) {
-        System.out.println("Connecting to https://www.youtube.com ...");
-        System.out.println("Downloading " + videoName);
+        textArea.append("Connecting to https://www.youtube.com ...\n");
+        textArea.append("Downloading " + videoName + "\n");
         return new Video(videoName);
     }
 }

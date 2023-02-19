@@ -14,11 +14,4 @@ public class Video {
     public Video(String videoName) {
         this.videoName = videoName;
     }
-
-    @Override
-    public String toString() {
-        return "Video{" + "videoName=" + videoName + '}';
-    }
-    
-    
 }
