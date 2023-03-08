@@ -180,9 +180,9 @@ public class GuiM extends javax.swing.JFrame {
         // TODO add your handling code here:
         javax.swing.table.DefaultTableModel model=(javax.swing.table.DefaultTableModel)tabella1.getModel();
         Object[] v={TestoNome.getText(), TestoCodice.getText(), TestoQuantita.getText(), TestoPrezzo.getText()};
-        if(TestoNome.getText().length()>0 && TestoCodice.getText().length()>0 && TestoQuantita.getText().length()>0 && TestoPrezzo.getText().length()>0){
-            model.addRow(v);
-        }
+            if(TestoNome.getText().length()>0 && TestoCodice.getText().length()>0 && TestoQuantita.getText().length()>0 && TestoPrezzo.getText().length()>0){
+                model.addRow(v);
+            }
         TestoNome.setText("");
         TestoCodice.setText("");
         TestoQuantita.setText("");
@@ -211,9 +211,9 @@ public class GuiM extends javax.swing.JFrame {
         // TODO add your handling code here:
         javax.swing.table.DefaultTableModel model=(javax.swing.table.DefaultTableModel)tabella1.getModel();
         Object[] v={TestoCodice.getText(), TestoQuantita.getText()};
-        if(TestoCodice.getText().length()>0 && TestoQuantita.getText().length()>0){
-            model.setValueAt(v, q, q);
-        }
+            if(TestoCodice.getText().length()>0 && TestoQuantita.getText().length()>0){
+                model.setValueAt(v, q, q);
+            }
         TestoCodice.setText("");
         TestoQuantita.setText("");
         m1.modificaQuantità(c,q);
