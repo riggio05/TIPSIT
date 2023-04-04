@@ -7,27 +7,23 @@ public class Contatore {
 
     public Contatore(int cont) {
         this.cont = cont;
+        this.s = new Semaphore(1);
     }
 
-    synchronized public void incrementa(int n) { //MONITOR
-        //quando un thread tenta dieseguire
-        //il metodo sincronizzato per poterlo fare
-        //deve acquisire un lock sull'oggetto
-        //se nessun altro thread possiede il lock
-        //allora il thread considerato lo acquisisce
+    synchronized public void incrementa(int n) {
 
-        //accade che 1 solo thread alla volta accede al metodo
-        this.cont = this.cont + n;
-        //quando il metodo termina il lock viene rilasciato
+        try{
+            this.s.acquire();
+            this.cont += n;
+            this.s.release();
+        } catch (InterruptedException e){}
     }
     public void decrementa(int n) {
-        synchronized (this){
-            //inseriamo le istruzioni da sincronizzare nel blocco
-            //synchronized devo passare come parametro l'ogetto rispetto
-            //al quale acquisre il locj
-        }
-        this.cont = this.cont - n;
-
+        try{
+            this.s.acquire();
+            this.cont -= n;
+            this.s.release();
+        }catch (InterruptedException e) {}
     }
 }
 
