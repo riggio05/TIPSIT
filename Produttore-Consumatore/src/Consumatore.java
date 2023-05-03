@@ -6,10 +6,10 @@ public class Consumatore extends Thread{
         this.b = b;
     }
     public void run(){
-        System.out.println("Partenza del consumatore "+getName());
+        System.out.println("Partenza del consumatore "+ getName());
         for (int i = 0; i < 500; i++) {
             b.rimuovi(getName());
         }
-        System.out.println("Fine del consumatore "+getName());
+        System.out.println("Fine del consumatore "+ getName());
     }
 }
